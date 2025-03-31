@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300..900&display=swap');
+
+:root {
+  --color-1: #1f2e55;
+  --color-2: #717fa6;
+  --color-3: #ffffff;
+  --color-4: #f7f9ff;
+  --color-5: #382ae1;
+  --color-6: #e0e8ff;
+  --color-7: #766cf1;
+}
+
+:root {
+  --text-heading: 900 1.75rem / 1.1 'Red Hat Display', sans-serif;
+  --text-body: 600 1rem / 26px 'Red Hat Display', sans-serif;
+  --text-plan-heading: 900 1rem / 1 'Red Hat Display', sans-serif;
+  --text-plan-price: 500 1rem / 1 'Red Hat Display', sans-serif;
+  --text-link: 800 0.875rem / 1 'Red Hat Display', sans-serif;
+  --text-action: 900 0.9375rem / 1.2 'Red Hat Display', sans-serif;
+  --border-radius-small: 0.6875rem;
+}
+
+/* css reset begins */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  height: 100vh;
+  width: 100vw;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* css reset ends */
+
+/* selector css */
+
+body {
+  background-color: var(--color-6);
+  color: var(--color-2);
+  font: var(--text-body);
+  display: flex;
+  place-content: center;
+  place-items: center;
+  position: relative;
+}
+
+body::before {
+  background-image: url(../assets/images/pattern-background-desktop.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 100% 48%;
+  content: '';
+  height: 100%;
+  inset: 0 auto auto 0;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+/* class css */
+
+.attribution {
+  display: none;
+}
+
+.card {
+  background-color: var(--color-3);
+  border-radius: 1.25rem;
+  box-shadow: 0 40px 40px -20px color-mix(in srgb, #0d30bd 15.18%, transparent);
+  overflow: hidden;
+  max-width: 28.125rem;
+}
+
+.card-content {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 2rem;
+  padding: 3rem;
+}
+
+.card-info {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1.25rem;
+  place-items: center;
+  text-align: center;
+}
+
+.card-info>h1 {
+  color: var(--color-1);
+  font: var(--text-heading);
+  margin-bottom: 1px;
+}
+
+.card-plan {
+  background-color: var(--color-4);
+  border-radius: var(--border-radius-small);
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1.25rem;
+  padding: 1.5625rem 1.5rem;
+  place-items: center;
+  width: 100%
+}
+
+.card-plan h2 {
+  color: var(--color-1);
+  font: var(--text-plan-heading);
+}
+
+.card-plan>a {
+  margin-left: auto;
+}
+
+.card-plan-info {
+  align-self: stretch;
+  display: flex;
+  flex-flow: column nowrap;
+  place-items: flex-start;
+  place-content: center;
+  gap: 0.375rem;
+}
+
+.btn-link {
+  color: var(--color-5);
+  font: var(--text-link);
+  text-decoration: underline;
+}
+
+.btn-link:active {
+  color: var(--color-7);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-5);
+  border: none;
+  border-radius: var(--border-radius-small);
+  box-shadow: 0 20px 20px 0 color-mix(in srgb, var(--color-5) 19.03%, transparent);
+  color: var(--color-3);
+  font: var(--text-action);
+  padding: 1rem;
+}
+
+.btn-link,
+.btn-primary,
+.btn-txt {
+  cursor: pointer;
+}
+
+.btn-primary:active {
+  background-color: var(--color-7);
+}
+
+.btn-txt {
+  background-color: transparent;
+  border: none;
+  color: var(--color-2);
+  font: var(--text-action);
+}
+
+.btn-txt:active {
+  cursor: pointer;
+  color: var(--color-1);
+}
+
+/* media queries */
+
+@media (max-width: 375px) {
+  body {
+    font-size: 0.9375rem;
+    padding: 1.5rem;
+  }
+
+  .card {
+    max-width: 20rem;
+  }
+
+  .card-content {
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .card-info {
+    gap: 1rem;
+  }
+
+  .card-info>h1 {
+    font-size: 1.375rem;
+  }
+
+  .card-plan {
+    margin-top: 0.5rem;
+    padding: 1rem;
+  }
+
+  .card-plan h2 {
+    font-size: 0.875rem;
+  }
+
+  .card-plan p {
+    font-size: 0.875rem;
+  }
+
+  .card-plan-info {
+    gap: 0.1875rem;
+  }
+
+  .btn-link {
+    font-size: 0.8125rem;
+    padding: 0;
+  }
+}
